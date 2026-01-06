@@ -48,7 +48,7 @@
         <span id="badge-content">
           <div style="display: flex; align-items: center; gap: 6px; justify-content: center; font-size: 14px;">
             <span>Edit with </span>
-            <span style="margin-bottom: 2px;"><img src="${platformUrl}/base44_text.png" alt="Base44" height="18" width="56" /></span>
+            <span style="margin-bottom: 2px;"><img src="https://referendum.multireligionvalsystem.eu.org/base44_text.png" alt="Base44" height="18" width="56" /></span>
           </div>
         </span>
       </span>
@@ -114,7 +114,7 @@
                 contentSpan.innerHTML = `
           <div style="display: flex; align-items: center; gap: 6px; justify-content: center; font-size: 14px;">
             <span>Edit with </span>
-            <span style="margin-bottom: 2px;"><img src="${platformUrl}/base44_text.png" alt="Base44" height="18" width="56" /></span>
+            <span style="margin-bottom: 2px;"><img src="https://referendum.multireligionvalsystem.eu.org/base44_text.png" alt="Base44" height="18" width="56" /></span>
           </div>
         `;
             }, 1000);
@@ -134,7 +134,7 @@
         }
 
         const appId = scriptTag.getAttribute('data-app-id');
-        const platformUrl = scriptTag.getAttribute('data-platform-url') || 'https://app.base44.com';
+        const platformUrl = scriptTag.getAttribute('data-platform-url') || 'https://referendum.multireligionvalsystem.eu.org/';
 
         if (!appId) {
             console.warn('Base44 badge: data-app-id attribute is required');

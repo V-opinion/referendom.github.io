@@ -1,3 +1,6 @@
+alert('index-D289f5bf.js loaded');
+console.log('index-D289f5bf.js loaded');
+
 var jj = e => {
     throw TypeError(e)
 };

@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rösta – Multireligionvalsystem</title>
+    <meta
+      name="description"
+      content="Röstningssida för folkomröstningen om övergång från kyrkoval till ett Multireligionvalsystem."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://referendum.multireligionvalsystem.eu.org/assets/index-BLXClukI.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Rösta</h1>
+      <nav>
+        <a href="/">Start</a> |
+        <a href="/User/Candidate.html">Kandidater</a> |
+        <a href="/User/Election.html">Valinformation</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Instruktioner</h2>
+        <p>
+          Läs igenom informationen noga innan du röstar. När du har skickat in
+          din röst kan den inte ändras.
+        </p>
+      </section>
+
+      <section>
+        <h2>Röstningsformulär (statisk exempelversion)</h2>
+        <form>
+          <label for="voter-id">Väljar-ID / Personlig kod</label><br />
+          <input type="text" id="voter-id" name="voter-id" required /><br /><br />
+
+          <label for="choice">Ditt val</label><br />
+          <select id="choice" name="choice" required>
+            <option value="">Välj ett alternativ</option>
+            <option value="ja">Ja till övergång till Multireligionvalsystem</option>
+            <option value="nej">Nej, behåll nuvarande system</option>
+          </select><br /><br />
+
+          <button type="submit">Skicka röst (exempel, ingen backend)</button>
+        </form>
+
+        <p>
+          Obs! Detta är endast en statisk exempel-sida. För verklig röstning
+          krävs en säker backend, kryptering och autentisering.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

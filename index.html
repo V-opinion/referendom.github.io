@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Icons / images (update to your correct image URL) -->
+    <!-- Favicon / icons -->
     <link
       rel="icon"
       type="image/png"
       href="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
     />
 
-    <!-- PWA manifest -->
-    <link rel="manifest" href="https://referendum.multireligionvalsystem.eu.org/manifest.json" />
+    <!-- Manifest -->
+    <link
+      rel="manifest"
+      href="https://referendum.multireligionvalsystem.eu.org/manifest.json"
+    />
 
     <title>
       online-voting-system | Folkomröstning om övergång från kyrkoval till ett Multireligionvalsystem
@@ -36,11 +39,11 @@
       href="https://referendum.multireligionvalsystem.eu.org/assets/index-BLXClukI.css"
     />
 
-    <!-- Main JS bundle (replace index-NEW_HASH.js with the REAL file name) -->
+    <!-- Main JS bundle (your file) -->
     <script
       type="module"
       crossorigin
-      src="/assets/index-NEW_HASH.js"
+      src="/assets/index-D289f5bf.js"
     ></script>
 
     <!-- Open Graph -->
@@ -53,7 +56,10 @@
       property="og:image"
       content="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
     />
-    <meta property="og:url" content="https://referendum.multireligionvalsystem.eu.org" />
+    <meta
+      property="og:url"
+      content="https://referendum.multireligionvalsystem.eu.org"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="online-voting-system" />
 
@@ -69,11 +75,14 @@
       content="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
     />
 
-    <!-- Canonical link -->
-    <link rel="canonical" href="https://referendum.multireligionvalsystem.eu.org" />
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://referendum.multireligionvalsystem.eu.org"
+    />
 
-    <!-- OPTIONAL: badge.js – FIXED attributes.
-         If unsure, you can comment this whole script out. -->
+    <!-- Optional badge.js, fixed.
+         If unsure, comment this out for now. -->
     <!--
     <script
       async
@@ -82,25 +91,12 @@
       src="https://referendum.multireligionvalsystem.eu.org/badge.js"
     ></script>
     -->
-    <script
-  async
-  data-app-id="multireligionval"
-  data-platform-url="https://referendum.multireligionvalsystem.eu.org"
-  src="https://referendum.multireligionvalsystem.eu.org/badge.js"
-></script>
-    <script
-  type="module"
-  crossorigin
-  src="/assets/index-D289f5bf.js"
-></script>
   </head>
 
   <body>
-    <!-- Fallback content so visitors see something even if JS fails -->
     <h1>Referendum site is working</h1>
     <p>If you see this text, index.html is being loaded correctly.</p>
 
-    <!-- React / app root -->
     <div id="root"></div>
   </body>
 </html>

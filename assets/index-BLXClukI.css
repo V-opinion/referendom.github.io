@@ -121,7 +121,154 @@
 :after {
     --tw-content: ""
 }
+/* Global page background – light floral impression */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 192, 203, 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(173, 216, 230, 0.35), transparent 55%),
+    #fffaf5;
+  color: #2b2b2b;
+}
 
+/* Centered, soft header with subtle floral accent */
+header {
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 192, 203, 0.35), rgba(255, 240, 245, 0.9)),
+    url("https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=1200&q=80")
+      center/cover no-repeat;
+  color: #2b2b2b;
+  position: relative;
+}
+
+header::after {
+  /* soft white overlay so text stays readable */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.95));
+  z-index: 0;
+}
+
+header h1,
+header nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* Navigation links */
+header nav a {
+  color: #7b2f7b;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+header nav a:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Main content card */
+main {
+  max-width: 960px;
+  margin: 1.5rem auto 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 192, 203, 0.4);
+}
+
+/* Section titles with floral underline */
+main h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  color: #7b2f7b;
+}
+
+main h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 80px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffb6c1, #ffdab9);
+}
+
+/* Candidate / election info cards */
+article {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  background: #fffdfc;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 182, 193, 0.6);
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+article::before {
+  /* tiny floral corner motif */
+  content: "✿";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.1rem;
+  color: #f59ac2;
+}
+
+/* Links and buttons with floral colors */
+a {
+  color: #c24e86;
+}
+
+a:hover {
+  color: #8c2b5d;
+}
+
+/* Simple button style (for Rate This etc.) */
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  background: linear-gradient(135deg, #ffb6c1, #ffdab9);
+  color: #4a254a;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ffa6b3, #ffd0aa);
+}
+
+/* Rate popup: harmonize with floral theme */
+#rate-popup {
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 182, 193, 0.8) !important;
+  background: radial-gradient(circle at top left, #fffafc, #ffffff) !important;
+}
+
+.rate-star {
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+}
+
+/* Symbol line ✝️☪️✡️☸️ +1 Oct 1 */
+.symbol-line {
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.15rem;
+  color: #7b2f7b;
+}
 html,
 :host {
     line-height: 1.5;

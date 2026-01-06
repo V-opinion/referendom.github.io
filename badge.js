@@ -1,9 +1,9 @@
+<!-- Option A: Fix the tag -->
 <script async
         data-app-id="multireligionval"
         data-platform-url="https://referendum.multireligionvalsystem.eu.org"
         src="https://referendum.multireligionvalsystem.eu.org/badge.js">
 </script>
-
 (function() {
     'use strict';
 

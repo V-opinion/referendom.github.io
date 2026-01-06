@@ -1,1 +1,22 @@
-No Content: https://referendum.multireligionvalsystem.eu.org/manifest.json
+{
+  "name": "Online Voting System – Multireligionvalsystem",
+  "short_name": "Multireligionval",
+  "description": "Folkomröstning om övergång från kyrkoval till ett Multireligionvalsystem.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0055aa",
+  "lang": "sv",
+  "icons": [
+    {
+      "src": "/images/9ad2320d7_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/9ad2320d7_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

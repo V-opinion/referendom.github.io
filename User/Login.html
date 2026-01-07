@@ -226,20 +226,22 @@
         </div>
         <p class="login-title">Sign in to continue</p>
 
-        <form>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required />
+       <form id="login-form">
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" required />
 
-          <label for="password">Password</label>
-          <input id="password" type="password" name="password" required />
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" required />
 
-          <div class="login-actions">
-            <button type="submit">Sign in</button>
-            <span class="comment-link">
-              Lämna en kommentar
-            </span>
-          </div>
-        </form>
+  <div class="login-actions">
+    <button type="submit">Sign in</button>
+    <span class="comment-link">
+      Lämna en kommentar
+    </span>
+  </div>
+</form>
+
+<p id="login-error" style="color: red; display: none; margin-top: 0.5rem;"></p>
       </section>
 
       <!-- Info card -->

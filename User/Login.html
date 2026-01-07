@@ -302,5 +302,71 @@
         </div>
       </section>
     </main>
+    <script>
+  (function () {
+    var form = document.getElementById('login-form');
+    var errorEl = document.getElementById('login-error');
+
+    // CHANGE THIS to your real login endpoint
+    var LOGIN_URL = 'https://referendum.multireligionvalsystem.eu.org/api/login';
+
+    if (!form) return;
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+
+      var email = document.getElementById('email').value.trim();
+      var password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        errorEl.textContent = 'Email och lösenord krävs.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      try {
+        var response = await fetch(LOGIN_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email, password: password })
+        });
+
+        if (!response.ok) {
+          // Try to read error message from server
+          var errData;
+          try {
+            errData = await response.json();
+          } catch (e) {
+            errData = null;
+          }
+          var message =
+            (errData && (errData.message || errData.error)) ||
+            'Inloggningen misslyckades. Kontrollera uppgifterna.';
+          throw new Error(message);
+        }
+
+        var data = await response.json();
+
+        // EXAMPLE: data contains { token: '...', user: {...} }
+        // Save token (localStorage here; or cookies if you prefer)
+        if (data.token) {
+          localStorage.setItem('auth_token', data.token);
+        }
+
+        // Redirect after successful login (change URL as needed)
+        window.location.href =
+          'https://referendum.multireligionvalsystem.eu.org/User/Election.html';
+      } catch (err) {
+        console.error('Login error:', err);
+        errorEl.textContent = err.message || 'Ett oväntat fel inträffade.';
+        errorEl.style.display = 'block';
+      }
+    });
+  })();
+</script>
   </body>
 </html>

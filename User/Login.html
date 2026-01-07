@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login – online-voting-system</title>
+    <meta
+      name="description"
+      content="Login-sida för online-voting-system med Multireligionvalsystem."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://referendum.multireligionvalsystem.eu.org/assets/index-BLXClukI.css"
+    />
+
+    <!-- Floral + layout theme -->
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 192, 203, 0.35), transparent 55%),
+          radial-gradient(circle at bottom right, rgba(173, 216, 230, 0.35), transparent 55%),
+          #fffaf5;
+        color: #2b2b2b;
+      }
+
+      header {
+        padding: 1.5rem 1rem 1rem;
+        text-align: center;
+        background:
+          linear-gradient(135deg, rgba(255, 192, 203, 0.35), rgba(255, 240, 245, 0.9)),
+          url("https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=1200&q=80")
+            center/cover no-repeat;
+        color: #2b2b2b;
+        position: relative;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.95)
+        );
+        z-index: 0;
+      }
+
+      header h1 {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 0.25rem;
+      }
+
+      header p {
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+      }
+
+      .symbol-line {
+        text-align: center;
+        margin: 0.5rem 0 1rem;
+        font-size: 1.15rem;
+        color: #7b2f7b;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 1.5rem auto 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 192, 203, 0.4);
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 800px) {
+        main {
+          grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+          align-items: flex-start;
+        }
+      }
+
+      .login-card,
+      .info-card {
+        padding: 1.25rem 1.5rem;
+        background: #fffdfc;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 182, 193, 0.6);
+        box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .login-card::before,
+      .info-card::before {
+        content: "✿";
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        font-size: 1.1rem;
+        color: #f59ac2;
+      }
+
+      .login-logo {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .login-logo img {
+        max-width: 80px;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      .login-title {
+        text-align: center;
+        margin: 0.25rem 0 0.5rem;
+        font-weight: 600;
+      }
+
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-weight: 600;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 0.45rem 0.6rem;
+        border-radius: 6px;
+        border: 1px solid #d4a2b9;
+        margin-top: 0.25rem;
+        box-sizing: border-box;
+      }
+
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.5rem 1.4rem;
+        background: linear-gradient(135deg, #ffb6c1, #ffdab9);
+        color: #4a254a;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #ffa6b3, #ffd0aa);
+      }
+
+      .login-actions {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .comment-link {
+        font-size: 0.9rem;
+      }
+
+      .comment-link a {
+        color: #c24e86;
+        text-decoration: none;
+      }
+
+      .comment-link a:hover {
+        color: #8c2b5d;
+      }
+
+      .info-card h2 {
+        margin-top: 0.2rem;
+        margin-bottom: 0.5rem;
+        color: #7b2f7b;
+      }
+
+      .info-card h3 {
+        margin-top: 1rem;
+        margin-bottom: 0.3rem;
+        color: #7b2f7b;
+      }
+
+      .faith-list {
+        display: grid;
+        gap: 0.15rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome to online-voting-system</h1>
+      <p>Sign in to continue</p>
+    </header>
+
+    <div class="symbol-line">
+      ✝️ ☪️ ✡️ ☸️ +1 Oct 1
+    </div>
+
+    <main>
+      <!-- Login card -->
+      <section class="login-card">
+        <div class="login-logo">
+          <img
+            src="https://referendum.multireligionvalsystem.eu.org/images/9ad2320d7_logo.png"
+            alt="online-voting-system logo"
+          />
+        </div>
+        <p class="login-title">Sign in to continue</p>
+
+        <form>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required />
+
+          <div class="login-actions">
+            <button type="submit">Sign in</button>
+            <span class="comment-link">
+              Lämna en kommentar
+            </span>
+          </div>
+        </form>
+      </section>
+
+      <!-- Info card -->
+      <section class="info-card">
+        <h2>About the System</h2>
+        <p>
+          The Multi-Religion Election System is a garden where faith and
+          democracy blossom side by side. We nurture democratic religious reform
+          by inviting every community to plant the seeds of peace through
+          inclusive elections.
+        </p>
+
+        <h3>Our Mission – Democracy for All Faiths</h3>
+        <p>
+          In a world where religious differences often lead to conflict, we
+          believe that democratic processes can bring people together. Our
+          system provides a framework for transparent, inclusive elections that
+          respect every tradition while promoting peace and understanding.
+        </p>
+
+        <h3>Interfaith Democratic Chamber</h3>
+        <p>
+          Each religious tradition is represented equally in our democratic
+          processes, ensuring every voice matters.
+        </p>
+
+        <h3>Transparent Processes</h3>
+        <p>
+          Open and verifiable election procedures for selecting religious
+          leadership with full accountability.
+        </p>
+
+        <h3>Global Conflict Resolution</h3>
+        <p>
+          Inspiring peaceful resolution of religious conflicts through
+          democratic ballots instead of violence.
+        </p>
+
+        <h3>Church-State Separation</h3>
+        <p>
+          Promoting pluralistic harmony while respecting the autonomy of all
+          faith traditions.
+        </p>
+
+        <h3>United in Diversity – All Faiths Welcome</h3>
+        <p>
+          Our system is designed to accommodate all major religious traditions,
+          ensuring equal representation and respect for each community.
+        </p>
+
+        <div class="faith-list">
+          <div>✝️ Christianity</div>
+          <div>☪️ Islam</div>
+          <div>✡️ Judaism</div>
+          <div>☸️ Buddhism</div>
+          <div>🕉️ Hinduism</div>
+          <div>🪯 Sikhism</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

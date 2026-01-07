@@ -560,5 +560,73 @@
     Tack för din bedömning!
   </p>
 </div>
+    <script>
+  (function () {
+    var rateButton = document.getElementById('rate-button');
+    var popup = document.getElementById('rate-popup');
+    var overlay = document.getElementById('rate-popup-overlay');
+    var cancelBtn = document.getElementById('rate-cancel');
+    var submitBtn = document.getElementById('rate-submit');
+    var thankYou = document.getElementById('rate-thankyou');
+    var commentField = document.getElementById('rate-comment');
+    var stars = document.querySelectorAll('.rate-star');
+    var selectedRating = 0;
+
+    function openPopup() {
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+      thankYou.style.display = 'none';
+    }
+
+    function closePopup() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+      selectedRating = 0;
+      commentField.value = '';
+      stars.forEach(function (s) {
+        s.classList.remove('selected');
+      });
+    }
+
+    if (rateButton) {
+      rateButton.addEventListener('click', openPopup);
+    }
+    if (overlay) {
+      overlay.addEventListener('click', closePopup);
+    }
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', closePopup);
+    }
+
+    stars.forEach(function (star) {
+      star.addEventListener('click', function () {
+        selectedRating = parseInt(star.getAttribute('data-rating'), 10);
+
+        // Mark selected star (only that star; colors are fixed via CSS)
+        stars.forEach(function (s) {
+          s.classList.toggle(
+            'selected',
+            s.getAttribute('data-rating') === String(selectedRating)
+          );
+        });
+      });
+    });
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function () {
+        var payload = {
+          rating: selectedRating,
+          comment: commentField.value
+        };
+
+        // Placeholder: log in console. Later you can send this to a backend.
+        console.log('Rate This payload:', payload);
+
+        thankYou.style.display = 'block';
+        setTimeout(closePopup, 2000);
+      });
+    }
+  })();
+</script>
   </body>
 </html>
